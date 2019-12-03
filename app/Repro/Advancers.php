@@ -3,6 +3,9 @@ namespace App\Repro;
 
 use App\Advancer;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
+
 class Advancers {
     CONST CACHE_KEY = "ADVANCER";
     public function all_data($name){
@@ -17,6 +20,17 @@ class Advancers {
         $key = strtoupper($key);
         return self::CACHE_KEY.".$key";
     }
+
+    public function fetchAll()
+    {
+        $result = Cache::remember('blog_posts_cache', 5000, function () {
+            Redis::connection();
+            return  Advancer::all();
+        });
+
+        return $result;
+    }
+
 }
 
 ?>

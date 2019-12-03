@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Department;
 use PayPal\Api\Item;
 use PayPal\Api\Payer;
+use GuzzleHttp\Client;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
 use PayPal\Api\Payment;
@@ -20,11 +21,12 @@ use App\Mail\SendEmailMailable;
 use App\Mail\WelcomeNewUserMail;
 use Facades\App\Repro\Advancers;
 use PayPal\Api\PaymentExecution;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\FormValidation;
+use Illuminate\Support\Facades\Redis;
 use App\Events\NewHolahasRegisteredEvant;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client;
 
 
 
@@ -41,22 +43,19 @@ class AdvanceController extends Controller
         $advancer = new Advancer();
         $advancer->name = $re->a_name;
         $advancer->phone = $re->a_phone;
-             $hola = array(
+        $advancer->dept = 1;
+         //    $hola = array(
           // 'p'     =>  $re->a_name,
-           'q'     =>  $re->a_phone,
+       //    'q'     =>  $re->a_phone,
 
-       );
+     //  );
        event(new NewHolahasRegisteredEvant($re->a_phone, $re->a_name));
        
         // dispatch (new SendEmailJob);
        
         //SendEmailJob::dispatch()
          //   ->delay(Carbon::now()->addSeconds(5));
-     //   $hola = array(
-      //      'p'     =>  $re->a_name,
-         //   'q'     =>  $re->a_phone,
-
-     //   );
+      
        // Mail::send('mail_send', $hola, function ($message) use ($hola) {
             //$this->hola=$hola;
          //   $message->to($hola['q']);
@@ -90,6 +89,14 @@ class AdvanceController extends Controller
       }
        // return view("show_data", compact("advancer"));
        
+    }
+    public function show_redis_data(){
+        //$redis = Redis::connection();
+        DB::connection()->enableQueryLog();
+        $advancer = Advancers::fetchAll();
+        $log = DB::getQueryLog();
+        print_r($log);
+        return view("show_redis_data", compact("advancer")); 
     }
 
     ////////////////////

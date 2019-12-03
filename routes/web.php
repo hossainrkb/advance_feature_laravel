@@ -37,3 +37,9 @@ Route::patch("/update/{id}", "AdvanceController@update")->name("update")->middle
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/show_redis_data', 'AdvanceController@show_redis_data');
+Route::get("redis_in", function(){
+    $redis = app()->make('redis');
+    $redis->set("key","bbro");
+    return $redis->get("key");
+});

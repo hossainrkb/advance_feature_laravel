@@ -36,15 +36,30 @@ class AdvancerTest extends TestCase
     public function can_register_data()
     {
         Event::fake();
-        $this->withExceptionHandling();
+        $this->withoutExceptionHandling();
         $this->actingAs(factory(User::class)->create());
 
-        $response = $this->post('/regis',[
-            'name'=> 'mama rakib',
-            'phone'=> "019231449666",
-            'dept'=> 1,
-        ]);
+        $response = $this->post('/regis',$this->data());
+        $this->assertCount(1,Advancer::all());
+    }
+    /** @test */
+    public function a_name_is_empty()
+    {
+        Event::fake();
+      //  $this->withoutExceptionHandling();
+        $this->actingAs(factory(User::class)->create());
+
+        $response = $this->post('/regis',array_merge($this->data(),['a_name'=>'']));
+        $response->assertSessionHasErrors('a_name');
         $this->assertCount(0,Advancer::all());
+    }
+
+    private function data(){
+        return [
+            'a_name' => 'mama rakib',
+            'a_phone' => "021151515151",
+            'dept' => 1,
+        ];
     }
 
 }
