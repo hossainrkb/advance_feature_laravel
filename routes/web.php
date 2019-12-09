@@ -32,6 +32,10 @@ Route::post("/regis", "AdvanceController@ad_regis")->name("ad_regis")->middlewar
 Route::get("/edit/{id}", "AdvanceController@edit")->name("edit")->middleware("auth");
 Route::patch("/update/{id}", "AdvanceController@update")->name("update")->middleware("auth");
 Route::get("reservations", "reservationController@get_data");
+Route::get("sum", "reservationController@getAllData");
+Route::get("coll", "holaController@check_collection");
+Route::get("ad", "holaController@advancers");
+
 
 
 

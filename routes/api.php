@@ -126,3 +126,6 @@ Route::post("/api_add", "AdvanceController@api_add_reg");
 Route::get("/data/{id}", "AdvanceController@get_data_by_id");
 Route::put("/edit_data/{id}", "AdvanceController@update");
 Route::delete("/delete_data/{id}", "AdvanceController@destroy");
+
+//
+Route::apiResource('products', 'ProductController');

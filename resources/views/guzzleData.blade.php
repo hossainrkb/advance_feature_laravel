@@ -66,5 +66,13 @@
                
             </div>
         </div>
+        <div class="row">
+            @php $array = ["1","rakib","tripovy","2","4","ggg"] @endphp
+                @foreach ($array as $item)
+                    <div class="col-md-4">
+                        <div class="card card-body bg-info ">{{ $item }}</div><br>
+                    </div>
+                @endforeach
+        </div>
 </body>
 </html>

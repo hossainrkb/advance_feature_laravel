@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\traits\ReservationTrait;
 use Illuminate\Http\Request;
 use App\Reservation;
 class reservationController extends Controller
@@ -11,4 +12,5 @@ class reservationController extends Controller
        // dd($reservation);
         return view("reservation" , ['reservation' => json_decode($reservation)]);
     }
+    use ReservationTrait;
 }

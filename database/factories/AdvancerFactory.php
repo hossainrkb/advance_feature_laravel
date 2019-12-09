@@ -10,6 +10,6 @@ $factory->define(Advancer::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'phone' => $faker->unique()->phoneNumber,
-        'dept' => 2,
+        'dept' => rand(1,2),
     ];
 });
