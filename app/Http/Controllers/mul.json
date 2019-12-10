@@ -1,0 +1,443 @@
+{
+    "type": "multicity",
+    "pnr_type": "multiple",
+    "vendor": "B",
+    "passport_required": true,
+    "trips": [
+        {
+            "departing_flight_segments": [
+                {
+                    "departure_airport": {
+                        "code": "CGP"
+                    },
+                    "arrival_airport": {
+                        "code": "DAC"
+                    },
+                    "transit_duration": null,
+                    "airline": {
+                        "airline_name": "BIMAN BANGLADESH",
+                        "code": "BG",
+                        "flight_number": "418",
+                        "marketing_airline": "BG",
+                        "marketing_flight_number": "418"
+                    },
+                    "departure_date": {
+                        "day": 9,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "arrival_date": {
+                        "day": 9,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "departure_time": {
+                        "hour": 17,
+                        "minute": 30,
+                        "format": 24
+                    },
+                    "arrival_time": {
+                        "hour": 18,
+                        "minute": 15,
+                        "format": 24
+                    },
+                    "flight_duration": 45,
+                    "aircraft": "Boeing 777-300ER",
+                    "fare_reference": "K",
+                    "marriage_grp": "O",
+                    "stop_airports": [],
+                    "cabin": "Economy"
+                }
+            ],
+            "departing_flight_duration": 45
+        },
+        {
+            "departing_flight_segments": [
+                {
+                    "departure_airport": {
+                        "code": "DAC"
+                    },
+                    "arrival_airport": {
+                        "code": "DXB"
+                    },
+                    "transit_duration": null,
+                    "airline": {
+                        "airline_name": "BIMAN BANGLADESH",
+                        "code": "BG",
+                        "flight_number": "047",
+                        "marketing_airline": "BG",
+                        "marketing_flight_number": "047"
+                    },
+                    "departure_date": {
+                        "day": 9,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "arrival_date": {
+                        "day": 9,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "departure_time": {
+                        "hour": 20,
+                        "minute": 0,
+                        "format": 24
+                    },
+                    "arrival_time": {
+                        "hour": 23,
+                        "minute": 59,
+                        "format": 24
+                    },
+                    "flight_duration": 359,
+                    "aircraft": "Boeing 777-300ER",
+                    "fare_reference": "K",
+                    "marriage_grp": "O",
+                    "stop_airports": [],
+                    "cabin": "Economy"
+                }
+            ],
+            "departing_flight_duration": 359
+        },
+        {
+            "departing_flight_segments": [
+                {
+                    "departure_airport": {
+                        "code": "DXB"
+                    },
+                    "arrival_airport": {
+                        "code": "LIS"
+                    },
+                    "transit_duration": null,
+                    "airline": {
+                        "airline_name": "EMIRATES",
+                        "code": "EK",
+                        "flight_number": "191",
+                        "marketing_airline": "EK",
+                        "marketing_flight_number": "191"
+                    },
+                    "departure_date": {
+                        "day": 10,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "arrival_date": {
+                        "day": 10,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "departure_time": {
+                        "hour": 7,
+                        "minute": 25,
+                        "format": 24
+                    },
+                    "arrival_time": {
+                        "hour": 12,
+                        "minute": 0,
+                        "format": 24
+                    },
+                    "flight_duration": 515,
+                    "aircraft": "Boeing 777-300ER",
+                    "fare_reference": "K",
+                    "marriage_grp": "O",
+                    "stop_airports": [],
+                    "cabin": "Economy"
+                }
+            ],
+            "departing_flight_duration": 515
+        },
+        {
+            "departing_flight_segments": [
+                {
+                    "departure_airport": {
+                        "code": "LIS"
+                    },
+                    "arrival_airport": {
+                        "code": "DXB"
+                    },
+                    "transit_duration": null,
+                    "airline": {
+                        "airline_name": "EMIRATES",
+                        "code": "EK",
+                        "flight_number": "194",
+                        "marketing_airline": "EK",
+                        "marketing_flight_number": "194"
+                    },
+                    "departure_date": {
+                        "day": 17,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "arrival_date": {
+                        "day": 18,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "departure_time": {
+                        "hour": 20,
+                        "minute": 45,
+                        "format": 24
+                    },
+                    "arrival_time": {
+                        "hour": 8,
+                        "minute": 15,
+                        "format": 24
+                    },
+                    "flight_duration": 450,
+                    "aircraft": "Boeing 777-300ER",
+                    "fare_reference": "K",
+                    "marriage_grp": "O",
+                    "stop_airports": [],
+                    "cabin": "Economy"
+                }
+            ],
+            "departing_flight_duration": 450
+        },
+        {
+            "departing_flight_segments": [
+                {
+                    "departure_airport": {
+                        "code": "DXB"
+                    },
+                    "arrival_airport": {
+                        "code": "CGP"
+                    },
+                    "transit_duration": null,
+                    "airline": {
+                        "airline_name": "BIMAN BANGLADESH",
+                        "code": "BG",
+                        "flight_number": "148",
+                        "marketing_airline": "BG",
+                        "marketing_flight_number": "148"
+                    },
+                    "departure_date": {
+                        "day": 19,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "arrival_date": {
+                        "day": 19,
+                        "month": 12,
+                        "year": 2019
+                    },
+                    "departure_time": {
+                        "hour": 2,
+                        "minute": 0,
+                        "format": 24
+                    },
+                    "arrival_time": {
+                        "hour": 9,
+                        "minute": 0,
+                        "format": 24
+                    },
+                    "flight_duration": 420,
+                    "aircraft": "Boeing 777-300ER",
+                    "fare_reference": "K",
+                    "marriage_grp": "O",
+                    "stop_airports": [],
+                    "cabin": "Economy"
+                }
+            ],
+            "departing_flight_duration": 420
+        }
+    ],
+    "price_itinerary": {
+        "economy": {
+            "amount": 84097,
+            "currency": "BDT",
+            "cabin_code": null,
+            "fare_breakdown": {
+                "adult": {
+                    "price": 84097,
+                    "tax": 0,
+                    "quantity": 1
+                },
+                "child": {
+                    "price": 0,
+                    "tax": 0,
+                    "quantity": 0
+                },
+                "infant": {
+                    "price": 0,
+                    "tax": 0,
+                    "quantity": 0
+                },
+                "total": 84097
+            }
+        },
+        "prices": [
+            {
+                "economy": {
+                    "amount": 2809,
+                    "currency": "BDT",
+                    "cabin_code": null,
+                    "fare_breakdown": {
+                        "adult": {
+                            "price": 2809,
+                            "tax": 0,
+                            "quantity": 1
+                        },
+                        "child": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "infant": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "total": 2809
+                    }
+                }
+            },
+            {
+                "economy": {
+                    "amount": 2809,
+                    "currency": "BDT",
+                    "cabin_code": null,
+                    "fare_breakdown": {
+                        "adult": {
+                            "price": 2809,
+                            "tax": 0,
+                            "quantity": 1
+                        },
+                        "child": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "infant": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "total": 2809
+                    }
+                }
+            },
+            {
+                "economy": {
+                    "amount": 37835,
+                    "currency": "BDT",
+                    "cabin_code": null,
+                    "fare_breakdown": {
+                        "adult": {
+                            "price": 37835,
+                            "tax": 0,
+                            "quantity": 1
+                        },
+                        "child": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "infant": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "total": 37835
+                    }
+                }
+            },
+            {
+                "economy": {
+                    "amount": 37835,
+                    "currency": "BDT",
+                    "cabin_code": null,
+                    "fare_breakdown": {
+                        "adult": {
+                            "price": 37835,
+                            "tax": 0,
+                            "quantity": 1
+                        },
+                        "child": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "infant": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "total": 37835
+                    }
+                }
+            },
+            {
+                "economy": {
+                    "amount": 2809,
+                    "currency": "BDT",
+                    "cabin_code": null,
+                    "fare_breakdown": {
+                        "adult": {
+                            "price": 2809,
+                            "tax": 0,
+                            "quantity": 1
+                        },
+                        "child": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "infant": {
+                            "price": 0,
+                            "tax": 0,
+                            "quantity": 0
+                        },
+                        "total": 2809
+                    }
+                }
+            }
+        ]
+    },
+    "baggage_allowance": {
+        "economy": {
+            "departing": {
+                "weight": 30,
+                "unit": "kg",
+                "passenger_type": "adult"
+            }
+        },
+        "breakdowns": {
+            "adult": [
+                {
+                    "weight": 30,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                },
+                {
+                    "weight": 30,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                },
+                {
+                    "weight": 30,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                },
+                {
+                    "weight": 35,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                },
+                {
+                    "weight": 50,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                }
+            ],
+            "child": null,
+            "infant": null
+        }
+    },
+    "seats_remaining": {
+        "economy": {
+            "number": 9
+        }
+    },
+    "is_refundable": false,
+    "adult_dob_required": true,
+    "totalFlightDuration": 0
+}

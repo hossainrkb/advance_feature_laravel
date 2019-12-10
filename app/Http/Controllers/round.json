@@ -1,0 +1,595 @@
+{
+    "type": "roundtrip",
+    "pnr_type": "single",
+    "vendor": "B",
+    "passport_required": true,
+    "departing_flight_duration": 925,
+    "returning_flight_duration": 955,
+    "departing_flight_segments": [
+        {
+            "departure_airport": {
+                "code": "DAC"
+            },
+            "arrival_airport": {
+                "code": "SIN"
+            },
+            "transit_duration": null,
+            "airline": {
+                "airline_name": "SINGAPORE AIRLINES",
+                "code": "SQ",
+                "flight_number": "449",
+                "marketing_airline": "SQ",
+                "marketing_flight_number": "449"
+            },
+            "departure_date": {
+                "day": 15,
+                "month": 3,
+                "year": 2020
+            },
+            "arrival_date": {
+                "day": 16,
+                "month": 3,
+                "year": 2020
+            },
+            "departure_time": {
+                "hour": 21,
+                "minute": 25,
+                "format": 24
+            },
+            "arrival_time": {
+                "hour": 3,
+                "minute": 40,
+                "format": 24
+            },
+            "flight_duration": 255,
+            "aircraft": "BOEING 777-200",
+            "fare_reference": "K",
+            "marriage_grp": "O",
+            "stop_airports": [],
+            "cabin": "Economy"
+        },
+        {
+            "departure_airport": {
+                "code": "SIN"
+            },
+            "arrival_airport": {
+                "code": "PEK"
+            },
+            "transit_duration": 305,
+            "airline": {
+                "airline_name": "SINGAPORE AIRLINES",
+                "code": "SQ",
+                "flight_number": "802",
+                "marketing_airline": "SQ",
+                "marketing_flight_number": "802"
+            },
+            "departure_date": {
+                "day": 16,
+                "month": 3,
+                "year": 2020
+            },
+            "arrival_date": {
+                "day": 16,
+                "month": 3,
+                "year": 2020
+            },
+            "departure_time": {
+                "hour": 8,
+                "minute": 45,
+                "format": 24
+            },
+            "arrival_time": {
+                "hour": 14,
+                "minute": 50,
+                "format": 24
+            },
+            "flight_duration": 365,
+            "aircraft": "AIRBUS INDUSTRIE A380-800",
+            "fare_reference": "K",
+            "marriage_grp": "I",
+            "stop_airports": [],
+            "cabin": "Economy"
+        }
+    ],
+    "returning_flight_segments": [
+        {
+            "departure_airport": {
+                "code": "PEK"
+            },
+            "arrival_airport": {
+                "code": "SIN"
+            },
+            "transit_duration": null,
+            "airline": {
+                "airline_name": "SINGAPORE AIRLINES",
+                "code": "SQ",
+                "flight_number": "805",
+                "marketing_airline": "SQ",
+                "marketing_flight_number": "805"
+            },
+            "departure_date": {
+                "day": 26,
+                "month": 3,
+                "year": 2020
+            },
+            "arrival_date": {
+                "day": 26,
+                "month": 3,
+                "year": 2020
+            },
+            "departure_time": {
+                "hour": 8,
+                "minute": 45,
+                "format": 24
+            },
+            "arrival_time": {
+                "hour": 15,
+                "minute": 30,
+                "format": 24
+            },
+            "flight_duration": 405,
+            "aircraft": "BOEING 777-200",
+            "fare_reference": "K",
+            "marriage_grp": "O",
+            "stop_airports": [],
+            "cabin": "Economy"
+        },
+        {
+            "departure_airport": {
+                "code": "SIN"
+            },
+            "arrival_airport": {
+                "code": "DAC"
+            },
+            "transit_duration": 305,
+            "airline": {
+                "airline_name": "SINGAPORE AIRLINES",
+                "code": "SQ",
+                "flight_number": "446",
+                "marketing_airline": "SQ",
+                "marketing_flight_number": "446"
+            },
+            "departure_date": {
+                "day": 26,
+                "month": 3,
+                "year": 2020
+            },
+            "arrival_date": {
+                "day": 26,
+                "month": 3,
+                "year": 2020
+            },
+            "departure_time": {
+                "hour": 20,
+                "minute": 35,
+                "format": 24
+            },
+            "arrival_time": {
+                "hour": 22,
+                "minute": 40,
+                "format": 24
+            },
+            "flight_duration": 245,
+            "aircraft": "AIRBUS INDUSTRIE 330-300",
+            "fare_reference": "K",
+            "marriage_grp": "I",
+            "stop_airports": [],
+            "cabin": "Economy"
+        }
+    ],
+    "price_itinerary": {
+        "economy": {
+            "amount": 37921,
+            "currency": "BDT",
+            "cabin_code": {
+                "departing_segments": [
+                    "Y",
+                    "Y"
+                ],
+                "returning_segments": [
+                    "Y",
+                    "Y"
+                ]
+            },
+            "fare_breakdown": {
+                "adult": {
+                    "price": 37921,
+                    "tax": 8773,
+                    "quantity": 1,
+                    "tax_breakdown": {
+                        "PassengerTypeQuantity": {
+                            "Code": "ADT",
+                            "Quantity": 1
+                        },
+                        "FareBasisCodes": {
+                            "FareBasisCode": [
+                                {
+                                    "BookingCode": "K",
+                                    "DepartureAirportCode": "DAC",
+                                    "ArrivalAirportCode": "SIN",
+                                    "FareComponentBeginAirport": "DAC",
+                                    "FareComponentEndAirport": "PEK",
+                                    "FareComponentDirectionality": "FROM",
+                                    "FareComponentVendorCode": "ATP",
+                                    "GovCarrier": "SQ",
+                                    "content": "KT5BDRY"
+                                },
+                                {
+                                    "BookingCode": "K",
+                                    "AvailabilityBreak": true,
+                                    "DepartureAirportCode": "SIN",
+                                    "ArrivalAirportCode": "PEK",
+                                    "GovCarrier": "SQ",
+                                    "content": "KT5BDRY"
+                                },
+                                {
+                                    "BookingCode": "K",
+                                    "DepartureAirportCode": "PEK",
+                                    "ArrivalAirportCode": "SIN",
+                                    "FareComponentBeginAirport": "PEK",
+                                    "FareComponentEndAirport": "DAC",
+                                    "FareComponentDirectionality": "TO",
+                                    "FareComponentVendorCode": "ATP",
+                                    "GovCarrier": "SQ",
+                                    "content": "KT5BDRY"
+                                },
+                                {
+                                    "BookingCode": "K",
+                                    "AvailabilityBreak": true,
+                                    "DepartureAirportCode": "SIN",
+                                    "ArrivalAirportCode": "DAC",
+                                    "GovCarrier": "SQ",
+                                    "content": "KT5BDRY"
+                                }
+                            ]
+                        },
+                        "PassengerFare": {
+                            "BaseFare": {
+                                "Amount": 347,
+                                "CurrencyCode": "USD"
+                            },
+                            "FareConstruction": {
+                                "Amount": 347,
+                                "CurrencyCode": "NUC",
+                                "DecimalPlaces": 2
+                            },
+                            "EquivFare": {
+                                "Amount": 29148,
+                                "CurrencyCode": "BDT",
+                                "DecimalPlaces": 0
+                            },
+                            "Taxes": {
+                                "Tax": [
+                                    {
+                                        "TaxCode": "BD",
+                                        "CountryCode": "BD",
+                                        "Amount": 500,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "E5",
+                                        "CountryCode": "BD",
+                                        "Amount": 75,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "OW2",
+                                        "CountryCode": "BD",
+                                        "Amount": 2000,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "UT3",
+                                        "CountryCode": "BD",
+                                        "Amount": 4000,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "CN",
+                                        "CountryCode": "CN",
+                                        "Amount": 1082,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "L7",
+                                        "CountryCode": "SG",
+                                        "Amount": 186,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "L7",
+                                        "CountryCode": "SG",
+                                        "Amount": 186,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "SG",
+                                        "CountryCode": "SG",
+                                        "Amount": 372,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "SG",
+                                        "CountryCode": "SG",
+                                        "Amount": 372,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    }
+                                ],
+                                "TaxSummary": [
+                                    {
+                                        "TaxCode": "BD",
+                                        "CountryCode": "BD",
+                                        "Amount": 500,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "UT3",
+                                        "CountryCode": "BD",
+                                        "Amount": 4000,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "OW2",
+                                        "CountryCode": "BD",
+                                        "Amount": 2000,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "E5",
+                                        "CountryCode": "BD",
+                                        "Amount": 75,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "SG",
+                                        "CountryCode": "SG",
+                                        "Amount": 744,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "L7",
+                                        "CountryCode": "SG",
+                                        "Amount": 372,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    },
+                                    {
+                                        "TaxCode": "CN",
+                                        "CountryCode": "CN",
+                                        "Amount": 1082,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0,
+                                        "content": null
+                                    }
+                                ],
+                                "TotalTax": {
+                                    "Amount": 8773,
+                                    "CurrencyCode": "BDT",
+                                    "DecimalPlaces": 0
+                                }
+                            },
+                            "OBFees": {
+                                "OBFee": [
+                                    {
+                                        "Amount": 0,
+                                        "CurrencyCode": "BDT",
+                                        "DecimalPlaces": 0
+                                    }
+                                ]
+                            },
+                            "TotalFare": {
+                                "Amount": 37921,
+                                "CurrencyCode": "BDT"
+                            },
+                            "TPA_Extensions": {
+                                "Messages": {
+                                    "Message": [
+                                        {
+                                            "AirlineCode": "SQ",
+                                            "Type": "N",
+                                            "FailCode": 0,
+                                            "Info": "CHNG FEE APPLY\/NON REFUND\/NO SHOW FEE APPLY"
+                                        },
+                                        {
+                                            "Type": "W",
+                                            "FailCode": 0,
+                                            "Info": "VALIDATING CARRIER - SQ"
+                                        }
+                                    ]
+                                },
+                                "BaggageInformationList": {
+                                    "BaggageInformation": [
+                                        {
+                                            "ProvisionType": "A",
+                                            "AirlineCode": "SQ",
+                                            "Segment": [
+                                                {
+                                                    "Id": 0
+                                                },
+                                                {
+                                                    "Id": 1
+                                                }
+                                            ],
+                                            "Allowance": [
+                                                {
+                                                    "Weight": 30,
+                                                    "Unit": "kg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "ProvisionType": "A",
+                                            "AirlineCode": "SQ",
+                                            "Segment": [
+                                                {
+                                                    "Id": 2
+                                                },
+                                                {
+                                                    "Id": 3
+                                                }
+                                            ],
+                                            "Allowance": [
+                                                {
+                                                    "Weight": 30,
+                                                    "Unit": "kg"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "Endorsements": {
+                            "NonRefundableIndicator": true
+                        },
+                        "TPA_Extensions": {
+                            "FareCalcLine": {
+                                "Info": "DAC SQ X\/SIN SQ BJS173.50SQ X\/SIN SQ DAC173.50NUC347.00END ROE1.00"
+                            }
+                        },
+                        "FareInfos": {
+                            "FareInfo": [
+                                {
+                                    "FareReference": "K",
+                                    "TPA_Extensions": {
+                                        "SeatsRemaining": {
+                                            "Number": 9,
+                                            "BelowMin": false
+                                        },
+                                        "Cabin": {
+                                            "Cabin": "Y"
+                                        },
+                                        "Meal": {
+                                            "Code": "M"
+                                        }
+                                    }
+                                },
+                                {
+                                    "FareReference": "K",
+                                    "TPA_Extensions": {
+                                        "SeatsRemaining": {
+                                            "Number": 9,
+                                            "BelowMin": false
+                                        },
+                                        "Cabin": {
+                                            "Cabin": "Y"
+                                        },
+                                        "Meal": {
+                                            "Code": "M"
+                                        }
+                                    }
+                                },
+                                {
+                                    "FareReference": "K",
+                                    "TPA_Extensions": {
+                                        "SeatsRemaining": {
+                                            "Number": 9,
+                                            "BelowMin": false
+                                        },
+                                        "Cabin": {
+                                            "Cabin": "Y"
+                                        },
+                                        "Meal": {
+                                            "Code": "M"
+                                        }
+                                    }
+                                },
+                                {
+                                    "FareReference": "K",
+                                    "TPA_Extensions": {
+                                        "SeatsRemaining": {
+                                            "Number": 9,
+                                            "BelowMin": false
+                                        },
+                                        "Cabin": {
+                                            "Cabin": "Y"
+                                        },
+                                        "Meal": {
+                                            "Code": "M"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "net_fare": 35981
+                },
+                "child": null,
+                "infant": null,
+                "total": 37921,
+                "total_net_fare": 35981
+            }
+        }
+    },
+    "baggage_allowance": {
+        "economy": {
+            "departing": {
+                "pieces": null,
+                "weight": 30,
+                "unit": "kg",
+                "passenger_type": "adult"
+            },
+            "returning": {
+                "pieces": null,
+                "weight": 30,
+                "unit": "kg",
+                "passenger_type": "adult"
+            }
+        },
+        "breakdowns": {
+            "adult": [
+                {
+                    "pieces": null,
+                    "weight": 30,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                },
+                {
+                    "pieces": null,
+                    "weight": 30,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                }
+            ],
+            "child": [],
+            "infant": []
+        }
+    },
+    "seats_remaining": {
+        "economy": {
+            "number": 9
+        }
+    },
+    "is_refundable": false,
+    "adult_dob_required": true,
+    "totalFlightDuration": 620
+}

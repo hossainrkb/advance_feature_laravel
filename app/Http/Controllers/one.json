@@ -1,0 +1,115 @@
+{
+    "type": "oneway",
+    "pnr_type": "single",
+    "vendor": "A",
+    "passport_required": false,
+    "departing_flight_segments": [
+        {
+            "departure_airport": {
+                "code": "DAC"
+            },
+            "arrival_airport": {
+                "code": "CGP"
+            },
+            "transit_duration": null,
+            "airline": {
+                "airline_name": "US-BANGLA AIRLINES",
+                "code": "BS",
+                "flight_number": "105"
+            },
+            "departure_date": {
+                "day": 13,
+                "month": 1,
+                "year": 2020
+            },
+            "arrival_date": {
+                "day": 13,
+                "month": 1,
+                "year": 2020
+            },
+            "departure_time": {
+                "hour": 12,
+                "minute": 15,
+                "format": 24
+            },
+            "arrival_time": {
+                "hour": 13,
+                "minute": 5,
+                "format": 24
+            },
+            "flight_duration": 50,
+            "aircraft": "ATR 72 - 600",
+            "fare_reference": null,
+            "marriage_grp": null,
+            "stop_airports": [],
+            "cabin": "Economy"
+        }
+    ],
+    "departing_flight_duration": 50,
+    "price_itinerary": {
+        "economy": {
+            "amount": 2500,
+            "currency": "BDT",
+            "cabin_code": null,
+            "fare_breakdown": {
+                "adult": {
+                    "price": 2500,
+                    "tax": 529,
+                    "quantity": 1,
+                    "return_price": 0,
+                    "return_tax": 0
+                },
+                "child": {
+                    "price": 0,
+                    "tax": 0,
+                    "quantity": 0,
+                    "return_price": 0,
+                    "return_tax": 0
+                },
+                "infant": {
+                    "price": 0,
+                    "tax": 0,
+                    "quantity": 0,
+                    "return_price": 0,
+                    "return_tax": 0
+                },
+                "total": 2500
+            }
+        }
+    },
+    "baggage_allowance": {
+        "economy": {
+            "departing": {
+                "weight": 20,
+                "unit": "kg",
+                "passenger_type": "adult"
+            }
+        },
+        "breakdowns": {
+            "adult": [
+                {
+                    "weight": 20,
+                    "unit": "kg",
+                    "passenger_type": "adult"
+                }
+            ],
+            "child": [
+                {
+                    "weight": 20,
+                    "unit": "kg",
+                    "passenger_type": "child"
+                }
+            ],
+            "infant": [
+                {
+                    "weight": 10,
+                    "unit": "kg",
+                    "passenger_type": "infant"
+                }
+            ]
+        }
+    },
+    "seats_remaining": null,
+    "is_refundable": true,
+    "totalFlightDuration": 50
+}
