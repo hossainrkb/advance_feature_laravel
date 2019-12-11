@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\traits\ReservationTrait;
 use Illuminate\Http\Request;
 use App\Reservation;
+use App\Contact;
 use App\Json;
 class reservationController extends Controller
 {
@@ -24,7 +25,7 @@ class reservationController extends Controller
        $code = '{
     "mm":"'.$re->name.'",
     "Coords": [{
-        "precision":"40",
+        "precision":"'.$re->name.'",
         "Accuracy": "30",
         "Latitude": "53.2778273",
         "Longitude": "-9.0121648",
@@ -49,4 +50,40 @@ $json5 = json_decode($code, true);
 
 
     }
+       //create flight page
+    public function create_flight(Request $request)
+    {
+        if (isset($request->trip_type) && isset($request->pnr_type)) {
+            $r = Reservation::where('trip_type', $request->trip_type)->where('pnr_type', $request->pnr_type)->first();
+           
+            // echo("<pre>".$r->toJson()); die;
+           // echo $r;
+            return view("flight", [
+                "json_schema" => json_decode($r->json_schema, true),
+                "cabin_class" => $request->cabin_class,
+            ]);
+        } else {
+            return view("flight");
+        }
+
+    }
+
+    
+public function postdata(Request $request)
+{
+  
+
+  
+    
+  $contacts = new Contact([
+    'name' => $request->get('name'),
+    'age' => $request->get('age'),
+]);
+$contacts->save();
+
+          //  $success_output = '<div class="alert alert-success">Data Inserted</div>';
+        
+
+}
+
 }

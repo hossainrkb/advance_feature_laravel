@@ -1,115 +1,786 @@
 {
-    "type": "oneway",
-    "pnr_type": "single",
-    "vendor": "A",
-    "passport_required": false,
-    "departing_flight_segments": [
-        {
-            "departure_airport": {
-                "code": "DAC"
-            },
-            "arrival_airport": {
-                "code": "CGP"
-            },
-            "transit_duration": null,
-            "airline": {
-                "airline_name": "US-BANGLA AIRLINES",
-                "code": "BS",
-                "flight_number": "105"
-            },
-            "departure_date": {
-                "day": 13,
-                "month": 1,
-                "year": 2020
-            },
-            "arrival_date": {
-                "day": 13,
-                "month": 1,
-                "year": 2020
-            },
-            "departure_time": {
-                "hour": 12,
-                "minute": 15,
-                "format": 24
-            },
-            "arrival_time": {
-                "hour": 13,
-                "minute": 5,
-                "format": 24
-            },
-            "flight_duration": 50,
-            "aircraft": "ATR 72 - 600",
-            "fare_reference": null,
-            "marriage_grp": null,
-            "stop_airports": [],
-            "cabin": "Economy"
-        }
+    "required": [
+        "booking_key",
+        "data",
+        "query",
+        "total_price",
+        "adult_price",
+        "child_price",
+        "infant_price",
+        "adult_tax",
+        "child_tax",
+        "infant_tax",
+        "total_fare",
+        "acc_card",
+        "passengers",
+        "special_message"
     ],
-    "departing_flight_duration": 50,
-    "price_itinerary": {
-        "economy": {
-            "amount": 2500,
-            "currency": "BDT",
-            "cabin_code": null,
-            "fare_breakdown": {
-                "adult": {
-                    "price": 2500,
-                    "tax": 529,
-                    "quantity": 1,
-                    "return_price": 0,
-                    "return_tax": 0
+    "properties": {
+        "booking_key": {
+            "type": "string",
+            "example": "ARFL1-ARFL1-J8VCHJ-J8VCHJ-ARFL1"
+        },
+        "data": {
+           
+            "required": [
+               
+                "passport_required",
+                "departing_flight_segments",
+                "price_itinerary",
+                "baggage_allowance"
+            ],
+            "type":"object",
+            "properties": {
+                "passport_required": {
+                    "type": "boolean"
                 },
-                "child": {
-                    "price": 0,
-                    "tax": 0,
-                    "quantity": 0,
-                    "return_price": 0,
-                    "return_tax": 0
+                "departing_flight_segments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "departure_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "airline": {
+                                "required": [
+                                    "airline_name",
+                                    "code",
+                                    "flight_number"
+                                ],
+                                "properties": {
+                                    "airline_name": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "flight_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "flight_duration": {
+                                "type": "number"
+                            },
+                            "stop_airports": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                }
+                            },
+                            "cabin": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
-                "infant": {
-                    "price": 0,
-                    "tax": 0,
-                    "quantity": 0,
-                    "return_price": 0,
-                    "return_tax": 0
+                "price_itinerary": {
+                    "required": [
+                        "business",
+                        "departing",
+                        "returning",
+                        "departing_itinerary",
+                        "returning_itinerary"
+                    ],
+                    "properties": {
+                        "business": {
+                            "required": [
+                                "amount",
+                                "currency",
+                                "cabin_code",
+                                "fare_breakdown"
+                            ],
+                            "properties": {
+                                "amount": {
+                                    "type": "number"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                },
+                                "fare_breakdown": {
+                                    "required": [
+                                        "adult",
+                                        "child",
+                                        "infant",
+                                        "total"
+                                    ],
+                                    "properties": {
+                                        "adult": {
+                                            "required": [
+                                                "price",
+                                                "tax",
+                                                "quantity",
+                                                "tax_breakdown"
+                                            ],
+                                            "properties": {
+                                                "price": {
+                                                    "type": "number"
+                                                },
+                                                "tax": {
+                                                    "type": "number"
+                                                },
+                                                "quantity": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "total": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "departing": {
+                            "type": "number"
+                        },
+                        "returning": {
+                            "type": "number"
+                        },
+                        "departing_itinerary": {
+                            "required": [
+                                "business",
+                                "departing",
+                                "returning"
+                            ],
+                            "properties": {
+                                "business": {
+                                    "required": [
+                                        "amount",
+                                        "currency",
+                                        "cabin_code",
+                                        "fare_breakdown"
+                                    ],
+                                    "properties": {
+                                        "amount": {
+                                            "type": "number"
+                                        },
+                                        "currency": {
+                                            "type": "string"
+                                        },
+                                        "fare_breakdown": {
+                                            "required": [
+                                                "adult",
+                                                "child",
+                                                "infant",
+                                                "total"
+                                            ],
+                                            "properties": {
+                                                "adult": {
+                                                    "required": [
+                                                        "price",
+                                                        "tax",
+                                                        "quantity",
+                                                        "tax_breakdown"
+                                                    ],
+                                                    "properties": {
+                                                        "price": {
+                                                            "type": "number"
+                                                        },
+                                                        "tax": {
+                                                            "type": "number"
+                                                        },
+                                                        "quantity": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "total": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "departing": {
+                                    "type": "number"
+                                },
+                                "returning": {
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "returning_itinerary": {
+                            "required": [
+                                "business"
+                            ],
+                            "properties": {
+                                "business": {
+                                    "required": [
+                                        "amount",
+                                        "currency",
+                                        "cabin_code",
+                                        "fare_breakdown"
+                                    ],
+                                    "properties": {
+                                        "amount": {
+                                            "type": "number"
+                                        },
+                                        "currency": {
+                                            "type": "string"
+                                        },
+                                        "fare_breakdown": {
+                                            "required": [
+                                                "adult",
+                                                "child",
+                                                "infant",
+                                                "total"
+                                            ],
+                                            "properties": {
+                                                "adult": {
+                                                    "required": [
+                                                        "price",
+                                                        "tax",
+                                                        "quantity",
+                                                        "tax_breakdown"
+                                                    ],
+                                                    "properties": {
+                                                        "price": {
+                                                            "type": "number"
+                                                        },
+                                                        "tax": {
+                                                            "type": "number"
+                                                        },
+                                                        "quantity": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "total": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
                 },
-                "total": 2500
-            }
-        }
-    },
-    "baggage_allowance": {
-        "economy": {
-            "departing": {
-                "weight": 20,
-                "unit": "kg",
-                "passenger_type": "adult"
+                "baggage_allowance": {
+                    "required": [
+                        "business",
+                        "breakdowns"
+                    ],
+                    "properties": {
+                        "business": {
+                            "required": [
+                                "departing",
+                                "returning"
+                            ],
+                            "properties": {
+                                "departing": {
+                                    "required": [
+                                        "pieces",
+                                        "weight",
+                                        "unit",
+                                        "passenger_type"
+                                    ],
+                                    "properties": {
+                                        "weight": {
+                                            "type": "number"
+                                        },
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "passenger_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "returning": {
+                                    "required": [
+                                        "pieces",
+                                        "weight",
+                                        "unit",
+                                        "passenger_type"
+                                    ],
+                                    "properties": {
+                                        "weight": {
+                                            "type": "number"
+                                        },
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "passenger_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "breakdowns": {
+                            "required": [
+                                "adult",
+                                "child",
+                                "infant"
+                            ],
+                            "properties": {
+                                "adult": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "weight": {
+                                                "type": "number"
+                                            },
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "passenger_type": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "child": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "weight": {
+                                                "type": "number"
+                                            },
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "passenger_type": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
             }
         },
-        "breakdowns": {
-            "adult": [
-                {
-                    "weight": 20,
-                    "unit": "kg",
-                    "passenger_type": "adult"
-                }
+        "query":{
+            "type":"object",
+            "required": [
+               
+                "origin",
+                "destination",
+                "departure_date",
+                "return_date",
+                "airlines",
+                "cabin_class",
+                "passengers"
             ],
-            "child": [
-                {
-                    "weight": 20,
-                    "unit": "kg",
-                    "passenger_type": "child"
+            "properties": {
+                "origin": {
+                    "type": "string"
+                },
+                "destination": {
+                    "type": "string"
+                },
+                "departure_date": {
+                    "required": [
+                        "day",
+                        "month",
+                        "year"
+                    ],
+                    "properties": {
+                        "day": {
+                            "type": "number"
+                        },
+                        "month": {
+                            "type": "number"
+                        },
+                        "year": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "return_date": {
+                    "required": [
+                        "day",
+                        "month",
+                        "year"
+                    ],
+                    "properties": {
+                        "day": {
+                            "type": "number"
+                        },
+                        "month": {
+                            "type": "number"
+                        },
+                        "year": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "airlines": {
+                    "type": "string"
+                },
+                "cabin_class": {
+                    "type": "string"
+                },
+                "passengers": {
+                    "required": [
+                        "adult_count",
+                        "child_count",
+                        "infant_count"
+                    ],
+                    "properties": {
+                        "adult_count": {
+                            "type": "number"
+                        },
+                        "child_count": {
+                            "type": "number"
+                        },
+                        "infant_count": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
                 }
+            }
+        },
+        "total_price": {
+            "type":"object",
+            "required": [
+                "business",
+                "departing",
+                "returning",
+                "departing_itinerary",
+                "returning_itinerary"
             ],
-            "infant": [
-                {
-                    "weight": 10,
-                    "unit": "kg",
-                    "passenger_type": "infant"
+            "properties": {
+                "business": {
+                    "required": [
+                        "amount",
+                        "currency",
+                        "cabin_code",
+                        "fare_breakdown"
+                    ],
+                    "properties": {
+                        "amount": {
+                            "type": "number"
+                        },
+                        "currency": {
+                            "type": "string"
+                        },
+                        "fare_breakdown": {
+                            "required": [
+                                "adult",
+                                "child",
+                                "infant",
+                                "total"
+                            ],
+                            "properties": {
+                                "adult": {
+                                    "required": [
+                                        "price",
+                                        "tax",
+                                        "quantity",
+                                        "tax_breakdown"
+                                    ],
+                                    "properties": {
+                                        "price": {
+                                            "type": "number"
+                                        },
+                                        "tax": {
+                                            "type": "number"
+                                        },
+                                        "quantity": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "total": {
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "departing": {
+                    "type": "number"
+                },
+                "returning": {
+                    "type": "number"
+                },
+                "departing_itinerary": {
+                    "required": [
+                        "business",
+                        "departing",
+                        "returning"
+                    ],
+                    "properties": {
+                        "business": {
+                            "required": [
+                                "amount",
+                                "currency",
+                                "cabin_code",
+                                "fare_breakdown"
+                            ],
+                            "properties": {
+                                "amount": {
+                                    "type": "number"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                },
+                                "fare_breakdown": {
+                                    "required": [
+                                        "adult",
+                                        "child",
+                                        "infant",
+                                        "total"
+                                    ],
+                                    "properties": {
+                                        "adult": {
+                                            "required": [
+                                                "price",
+                                                "tax",
+                                                "quantity",
+                                                "tax_breakdown"
+                                            ],
+                                            "properties": {
+                                                "price": {
+                                                    "type": "number"
+                                                },
+                                                "tax": {
+                                                    "type": "number"
+                                                },
+                                                "quantity": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "total": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "departing": {
+                            "type": "number"
+                        },
+                        "returning": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "returning_itinerary": {
+                    "required": [
+                        "business"
+                    ],
+                    "properties": {
+                        "business": {
+                            "required": [
+                                "amount",
+                                "currency",
+                                "cabin_code",
+                                "fare_breakdown"
+                            ],
+                            "properties": {
+                                "amount": {
+                                    "type": "number"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                },
+                                "fare_breakdown": {
+                                    "required": [
+                                        "adult",
+                                        "child",
+                                        "infant",
+                                        "total"
+                                    ],
+                                    "properties": {
+                                        "adult": {
+                                            "required": [
+                                                "price",
+                                                "tax",
+                                                "quantity",
+                                                "tax_breakdown"
+                                            ],
+                                            "properties": {
+                                                "price": {
+                                                    "type": "number"
+                                                },
+                                                "tax": {
+                                                    "type": "number"
+                                                },
+                                                "quantity": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "total": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
                 }
-            ]
+            }
+        },
+        "adult_price": {
+            "type": "number",
+            "example": 0
+        },
+        "child_price": {
+            "type": "number",
+            "example": 0
+        },
+        "infant_price": {
+            "type": "number",
+            "example": 0
+        },
+        "adult_tax": {
+            "type": "number",
+            "example": 0
+        },
+        "child_tax": {
+            "type": "number",
+            "example": 0
+        },
+        "infant_tax": {
+            "type": "number",
+            "example": 0
+        },
+        "total_fare": {
+            "type": "number",
+            "example": 84097
+        },
+        "flight_count": {
+            "type": "number",
+            "example": 5
         }
-    },
-    "seats_remaining": null,
-    "is_refundable": true,
-    "totalFlightDuration": 50
+      
+    }
 }

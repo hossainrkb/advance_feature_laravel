@@ -40,6 +40,7 @@ Route::get("ad", "holaController@advancers");
 
 Route::get("show_create", "reservationController@show_create")->name("json_insert");
 Route::post("show_create", "reservationController@json_store")->name("json_store");
+Route::get("create_flight", "reservationController@create_flight");
 
 
 Auth::routes();
@@ -51,3 +52,5 @@ Route::get("redis_in", function(){
     $redis->set("key","bbro");
     return $redis->get("key");
 });
+
+Route::get('contactdata/postdata', 'reservationController@postdata')->name('contact.postdata');
