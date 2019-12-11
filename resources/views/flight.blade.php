@@ -32,7 +32,9 @@ $bro = "";
                 @if($get_search !== NULL)
                 @if($get_search->trip_type === "roundtrip" and $get_search->pnr_type === "multiple" )
                 {{"bbbb"}}
-                   <form></form>
+                   <form>
+                   {{ csrf_token() }}
+                   </form>
              <script type="text/javascript">
       $('form').jsonForm({
         schema: {
@@ -54,7 +56,7 @@ $bro = "";
  $.ajax({
         type: "get",
          url:"{{ route('contact.postdata') }}",
-        data: { $('form').serialize(), _token: "{{ csrf_token() }}"}, 
+        data: form_data, 
         dataType:"json",
         success: function( msg ) {
             alert( "done" );
