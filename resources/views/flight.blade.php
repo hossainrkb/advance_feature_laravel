@@ -8,12 +8,11 @@ $bro = "";
 @endphp
 <html lang="en">
     <head>
-    <link rel="stylesheet" style="text/css" href ="{{ asset("/deps/opt/bootstrap.css")}}" /> 
+   <link rel="stylesheet" style="text/css" href ="{{ asset("/deps/opt/bootstrap.css")}}" /> 
     <script type="text/javascript" src="{{ asset("/deps/jquery.min.js")}}"></script>
     <script type="text/javascript" src="{{ asset("/deps/underscore.js")}}" ></script>
     <script type="text/javascript" src="{{ asset("/deps/opt/jsv.js")}}"></script>
-    <script type="text/javascript" src="{{ asset("/deps/lib/jsonform.js")}}"></script>  
-       
+    <script type="text/javascript" src="{{ asset("/deps/lib/jsonform.js")}}"></script> 
     </head>
     <body>
         <div class="container">
@@ -23,6 +22,7 @@ $bro = "";
                 @php
                 $trip_type = Request::get('trip_type');
                 $pnr_type = Request::get('pnr_type');
+                $cabin_class = Request::get('cabin_class');
                 @endphp
                 @if($trip_type and $pnr_type)
                 @php $get_search = App\Reservation::Where('trip_type', $trip_type)
@@ -31,49 +31,92 @@ $bro = "";
                 @endphp
                 @if($get_search !== NULL)
                 @if($get_search->trip_type === "roundtrip" and $get_search->pnr_type === "multiple" )
-                {{"bbbb"}}
-                   <form>
-                   {{ csrf_token() }}
-                   </form>
-             <script type="text/javascript">
+     <form></form>
+    <script type="text/javascript">
       $('form').jsonForm({
-        schema: {
-          name: {
-            type: 'string',
-            title: 'Name',
-            required: true
-          },
-          age: {
-            type: 'number',
-            title: 'Age'
-          }
-        },
+        schema: JSON.parse(`@json($json_schema)`.replace(/\"business\"\:/gi, `"{{ $cabin_class }}":`)),
         onSubmit: function (errors, values) {
-        var name = values.name;
-        var age = values.age;
-        var form_data = $('form').serialize();
-        console.log(form_data);
- $.ajax({
-        type: "get",
-         url:"{{ route('contact.postdata') }}",
-        data: form_data, 
-        dataType:"json",
+          var form_data = JSON.stringify(values);
+          var cabin_class = "{{ $cabin_class }}";
+          var trip_type = "{{ $trip_type }}";
+          var pnr_type = "{{ $pnr_type }}";
+          console.log("form data", cabin_class);
+      $.ajax({
+        type: "post",
+         url:"{{ route('flight_reservation') }}"  + `?trip_type=${trip_type}&pnr_type=${pnr_type}&cabin_class=${cabin_class}`,
+         data: form_data,
+         processData:false,
         success: function( msg ) {
-            alert( "done" );
+            console.log("done");
         }
     });
         }
-
-
-
       });
     </script>
+
                 @elseif($get_search->trip_type === "oneway" and $get_search->pnr_type === "single")
-               
+            <form></form>
+    <script type="text/javascript">
+      $('form').jsonForm({
+        schema: JSON.parse(`@json($json_schema)`.replace(/\"business\"\:/gi, `"{{ $cabin_class }}":`)),
+        onSubmit: function (errors, values) {
+          var form_data = JSON.stringify(values);
+          var cabin_class = "{{ $cabin_class }}";
+          var trip_type = "{{ $trip_type }}";
+          var pnr_type = "{{ $pnr_type }}";
+          console.log("form data", cabin_class);
+      $.ajax({
+        type: "post",
+         url:"{{ route('flight_reservation') }}"  + `?trip_type=${trip_type}&pnr_type=${pnr_type}&cabin_class=${cabin_class}`,
+         data: form_data,
+         processData:false,
+        success: function( msg ) {
+            console.log("done");
+        }
+    });
+        }
+      });
+    </script>
                 @elseif($get_search->trip_type === "roundtrip" and $get_search->pnr_type === "single")
-                
+               <form></form>
+    <script type="text/javascript">
+      $('form').jsonForm({
+        schema: JSON.parse(`@json($json_schema)`.replace(/\"business\"\:/gi, `"{{ $cabin_class }}":`)),
+        onSubmit: function (errors, values) {
+          var form_data = JSON.stringify(values);
+          var cabin_class = "{{ $cabin_class }}";
+          var trip_type = "{{ $trip_type }}";
+          var pnr_type = "{{ $pnr_type }}";
+          console.log("form data", cabin_class);
+      $.ajax({
+        type: "post",
+         url:"{{ route('flight_reservation') }}"  + `?trip_type=${trip_type}&pnr_type=${pnr_type}&cabin_class=${cabin_class}`,
+         data: form_data,
+         processData:false,
+        success: function( msg ) {
+            console.log("done");
+        }
+    });
+        }
+      });
+    </script>
                 @elseif($get_search->trip_type === "multicity" and $get_search->pnr_type === "multiple")
-               
+                <form></form>
+                <script type="text/javascript">
+                  $('form').jsonForm({
+                    schema: JSON.parse(`@json($json_schema)`.replace(/\"business\"\:/gi, `"{{ $cabin_class }}":`)),
+                    onSubmit: function (errors, values) {
+                      if (errors) {
+                        $('#res').html('<p>I beg your pardon?</p>');
+                      }
+                      else {
+                        $('#res').html('<p>Hello ' + values.name + '.' +
+                          (values.age ? '<br/>You are ' + values.age + '.' : '') +
+                          '</p>');
+                      }
+                    }
+                  });
+                </script>
                 @endif
                     @else 
                     {{"Not Found"}}

@@ -11,6 +11,38 @@ use GuzzleHttp\Exception\RequestException;
 
 class GuzzleController extends Controller
 {
+    public function prac_index()
+    {
+        $client = new Client();
+      //  $request = $client->get('http://localhost/advance_lara/public/api/regis1');
+        // $response = $request->getBody();
+       // $get_data= $request->getBody();
+
+      //  return view("guzzleData", ['all_data' => json_decode($get_data)]);
+          $promise = $client->getAsync('https://jsonplaceholder.typicode.com/posts')->then(
+            function ($response) {
+               // dd("ff");
+              
+                return $response->getBody();  
+            },
+            function ($exception) {
+              //  dd("fff")
+                return $exception->getMessage();
+            }
+        );
+       // echo "dd";
+        
+        $response = $promise->wait();
+       // dd(json_decode($response));
+      $data =  json_decode($response);
+    //  dd($data[0]->userId);
+     // dd(gettype($data));
+return $data;
+        //echo $response;
+       // $department = Department::all();
+       // return view("guzzleData", ['all_data' => json_decode($response)], compact("department"));
+    }
+
     public function index()
     {
         $client = new Client();

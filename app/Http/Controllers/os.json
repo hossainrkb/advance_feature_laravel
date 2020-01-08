@@ -1,0 +1,1676 @@
+{
+    "required": [
+        "booking_key",
+        "data",
+        "query",
+        "total_price",
+        "adult_price",
+        "child_price",
+        "infant_price",
+        "adult_tax",
+        "child_tax",
+        "infant_tax",
+        "total_fare",
+        "passengers",
+        "special_message"
+    ],
+    "properties": {
+        "booking_key": {
+            "type": "string",
+            "example": "TAOS3E"
+        },
+        "data": {
+            "required": [
+                "passport_required",
+                "departing_flight_duration",
+                "returning_flight_duration",
+                "departing_flight_segments",
+                "returning_flight_segments",
+                "price_itinerary",
+                "baggage_allowance"
+            ],
+            "properties": {
+                "passport_required": {
+                    "type": "boolean"
+                },
+                "departing_flight_duration": {
+                    "type": "number"
+                },
+                "returning_flight_duration": {
+                    "type": "number"
+                },
+                "departing_flight_segments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "departure_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "airline": {
+                                "required": [
+                                    "airline_name",
+                                    "code",
+                                    "flight_number",
+                                    "marketing_airline",
+                                    "marketing_flight_number"
+                                ],
+                                "properties": {
+                                    "airline_name": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "flight_number": {
+                                        "type": "string"
+                                    },
+                                    "marketing_airline": {
+                                        "type": "string"
+                                    },
+                                    "marketing_flight_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "flight_duration": {
+                                "type": "number"
+                            },
+                            "aircraft": {
+                                "type": "string"
+                            },
+                            "fare_reference": {
+                                "type": "string"
+                            },
+                            "marriage_grp": {
+                                "type": "string"
+                            },
+                            "stop_airports": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "cabin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "returning_flight_segments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "departure_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "airline": {
+                                "required": [
+                                    "airline_name",
+                                    "code",
+                                    "flight_number",
+                                    "marketing_airline",
+                                    "marketing_flight_number"
+                                ],
+                                "properties": {
+                                    "airline_name": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "flight_number": {
+                                        "type": "string"
+                                    },
+                                    "marketing_airline": {
+                                        "type": "string"
+                                    },
+                                    "marketing_flight_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "flight_duration": {
+                                "type": "number"
+                            },
+                            "aircraft": {
+                                "type": "string"
+                            },
+                            "fare_reference": {
+                                "type": "string"
+                            },
+                            "marriage_grp": {
+                                "type": "string"
+                            },
+                            "stop_airports": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "cabin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "price_itinerary": {
+                    "required": [
+                        "business"
+                    ],
+                    "properties": {
+                        "business": {
+                            "required": [
+                                "amount",
+                                "currency",
+                                "cabin_code",
+                                "fare_breakdown"
+                            ],
+                            "properties": {
+                                "amount": {
+                                    "type": "number"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                },
+                                "cabin_code": {
+                                    "required": [
+                                        "departing_segments",
+                                        "returning_segments"
+                                    ],
+                                    "properties": {
+                                        "departing_segments": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "returning_segments": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "fare_breakdown": {
+                                    "required": [
+                                        "adult",
+                                        "child",
+                                        "infant",
+                                        "total",
+                                        "total_net_fare"
+                                    ],
+                                    "properties": {
+                                        "adult": {
+                                            "required": [
+                                                "price",
+                                                "tax",
+                                                "quantity",
+                                                "tax_breakdown",
+                                                "net_fare"
+                                            ],
+                                            "properties": {
+                                                "price": {
+                                                    "type": "number"
+                                                },
+                                                "tax": {
+                                                    "type": "number"
+                                                },
+                                                "quantity": {
+                                                    "type": "number"
+                                                },
+                                                "tax_breakdown": {
+                                                    "required": [
+                                                        "PassengerTypeQuantity",
+                                                        "FareBasisCodes",
+                                                        "PassengerFare",
+                                                        "Endorsements",
+                                                        "TPA_Extensions",
+                                                        "FareInfos"
+                                                    ],
+                                                    "properties": {
+                                                        "PassengerTypeQuantity": {
+                                                            "required": [
+                                                                "Code",
+                                                                "Quantity"
+                                                            ],
+                                                            "properties": {
+                                                                "Code": {
+                                                                    "type": "string"
+                                                                },
+                                                                "Quantity": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "FareBasisCodes": {
+                                                            "required": [
+                                                                "FareBasisCode"
+                                                            ],
+                                                            "properties": {
+                                                                "FareBasisCode": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "BookingCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "DepartureAirportCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "ArrivalAirportCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "FareComponentBeginAirport": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "FareComponentEndAirport": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "FareComponentDirectionality": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "FareComponentVendorCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "GovCarrier": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "content": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "PassengerFare": {
+                                                            "required": [
+                                                                "BaseFare",
+                                                                "FareConstruction",
+                                                                "EquivFare",
+                                                                "Taxes",
+                                                                "OBFees",
+                                                                "TotalFare",
+                                                                "TPA_Extensions"
+                                                            ],
+                                                            "properties": {
+                                                                "BaseFare": {
+                                                                    "required": [
+                                                                        "Amount",
+                                                                        "CurrencyCode"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Amount": {
+                                                                            "type": "number"
+                                                                        },
+                                                                        "CurrencyCode": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "FareConstruction": {
+                                                                    "required": [
+                                                                        "Amount",
+                                                                        "CurrencyCode",
+                                                                        "DecimalPlaces"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Amount": {
+                                                                            "type": "number"
+                                                                        },
+                                                                        "CurrencyCode": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "DecimalPlaces": {
+                                                                            "type": "number"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "EquivFare": {
+                                                                    "required": [
+                                                                        "Amount",
+                                                                        "CurrencyCode",
+                                                                        "DecimalPlaces"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Amount": {
+                                                                            "type": "number"
+                                                                        },
+                                                                        "CurrencyCode": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "DecimalPlaces": {
+                                                                            "type": "number"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "Taxes": {
+                                                                    "required": [
+                                                                        "Tax",
+                                                                        "TaxSummary",
+                                                                        "TotalTax"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Tax": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "TaxCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "CountryCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "Amount": {
+                                                                                        "type": "number"
+                                                                                    },
+                                                                                    "CurrencyCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "DecimalPlaces": {
+                                                                                        "type": "number"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "TaxSummary": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "TaxCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "CountryCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "Amount": {
+                                                                                        "type": "number"
+                                                                                    },
+                                                                                    "CurrencyCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "DecimalPlaces": {
+                                                                                        "type": "number"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        "TotalTax": {
+                                                                            "required": [
+                                                                                "Amount",
+                                                                                "CurrencyCode",
+                                                                                "DecimalPlaces"
+                                                                            ],
+                                                                            "properties": {
+                                                                                "Amount": {
+                                                                                    "type": "number"
+                                                                                },
+                                                                                "CurrencyCode": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "DecimalPlaces": {
+                                                                                    "type": "number"
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "OBFees": {
+                                                                    "required": [
+                                                                        "OBFee"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "OBFee": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "Amount": {
+                                                                                        "type": "number"
+                                                                                    },
+                                                                                    "CurrencyCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "DecimalPlaces": {
+                                                                                        "type": "number"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "TotalFare": {
+                                                                    "required": [
+                                                                        "Amount",
+                                                                        "CurrencyCode"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Amount": {
+                                                                            "type": "number"
+                                                                        },
+                                                                        "CurrencyCode": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "TPA_Extensions": {
+                                                                    "required": [
+                                                                        "Messages",
+                                                                        "BaggageInformationList"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Messages": {
+                                                                            "required": [
+                                                                                "Message"
+                                                                            ],
+                                                                            "properties": {
+                                                                                "Message": {
+                                                                                    "type": "array",
+                                                                                    "items": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "AirlineCode": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "Type": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "FailCode": {
+                                                                                                "type": "number"
+                                                                                            },
+                                                                                            "Info": {
+                                                                                                "type": "string"
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        "BaggageInformationList": {
+                                                                            "required": [
+                                                                                "BaggageInformation"
+                                                                            ],
+                                                                            "properties": {
+                                                                                "BaggageInformation": {
+                                                                                    "type": "array",
+                                                                                    "items": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "ProvisionType": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "AirlineCode": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "Segment": {
+                                                                                                "type": "array",
+                                                                                                "items": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                        "Id": {
+                                                                                                            "type": "number"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "Allowance": {
+                                                                                                "type": "array",
+                                                                                                "items": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                        "Weight": {
+                                                                                                            "type": "number"
+                                                                                                        },
+                                                                                                        "Unit": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "Endorsements": {
+                                                            "required": [
+                                                                "NonRefundableIndicator"
+                                                            ],
+                                                            "properties": {
+                                                                "NonRefundableIndicator": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "TPA_Extensions": {
+                                                            "required": [
+                                                                "FareCalcLine"
+                                                            ],
+                                                            "properties": {
+                                                                "FareCalcLine": {
+                                                                    "required": [
+                                                                        "Info"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Info": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "FareInfos": {
+                                                            "required": [
+                                                                "FareInfo"
+                                                            ],
+                                                            "properties": {
+                                                                "FareInfo": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "FareReference": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "TPA_Extensions": {
+                                                                                "required": [
+                                                                                    "SeatsRemaining",
+                                                                                    "Cabin",
+                                                                                    "Meal"
+                                                                                ],
+                                                                                "properties": {
+                                                                                    "SeatsRemaining": {
+                                                                                        "required": [
+                                                                                            "Number",
+                                                                                            "BelowMin"
+                                                                                        ],
+                                                                                        "properties": {
+                                                                                            "Number": {
+                                                                                                "type": "number"
+                                                                                            },
+                                                                                            "BelowMin": {
+                                                                                                "type": "boolean"
+                                                                                            }
+                                                                                        },
+                                                                                        "type": "object"
+                                                                                    },
+                                                                                    "Cabin": {
+                                                                                        "required": [
+                                                                                            "Cabin"
+                                                                                        ],
+                                                                                        "properties": {
+                                                                                            "Cabin": {
+                                                                                                "type": "string"
+                                                                                            }
+                                                                                        },
+                                                                                        "type": "object"
+                                                                                    },
+                                                                                    "Meal": {
+                                                                                        "required": [
+                                                                                            "Code"
+                                                                                        ],
+                                                                                        "properties": {
+                                                                                            "Code": {
+                                                                                                "type": "string"
+                                                                                            }
+                                                                                        },
+                                                                                        "type": "object"
+                                                                                    }
+                                                                                },
+                                                                                "type": "object"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "net_fare": {
+                                                    "type": "number"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "total": {
+                                            "type": "number"
+                                        },
+                                        "total_net_fare": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "baggage_allowance": {
+                    "required": [
+                        "business",
+                        "breakdowns"
+                    ],
+                    "properties": {
+                        "business": {
+                            "required": [
+                                "departing",
+                                "returning"
+                            ],
+                            "properties": {
+                                "departing": {
+                                    "required": [
+                                        "pieces",
+                                        "weight",
+                                        "unit",
+                                        "passenger_type"
+                                    ],
+                                    "properties": {
+                                        "weight": {
+                                            "type": "number"
+                                        },
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "passenger_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "returning": {
+                                    "required": [
+                                        "pieces",
+                                        "weight",
+                                        "unit",
+                                        "passenger_type"
+                                    ],
+                                    "properties": {
+                                        "weight": {
+                                            "type": "number"
+                                        },
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "passenger_type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "breakdowns": {
+                            "required": [
+                                "adult",
+                                "child",
+                                "infant"
+                            ],
+                            "properties": {
+                                "adult": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "weight": {
+                                                "type": "number"
+                                            },
+                                            "unit": {
+                                                "type": "string"
+                                            },
+                                            "passenger_type": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "child": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "infant": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "query": {
+            "type": "object",
+            "required": [
+                "trip_type",
+                "origin",
+                "destination",
+                "departure_date",
+                "return_date",
+                "airlines",
+                "cabin_class",
+                "passengers"
+            ],
+            "properties": {
+                "trip_type": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "destination": {
+                    "type": "string"
+                },
+                "departure_date": {
+                    "required": [
+                        "day",
+                        "month",
+                        "year"
+                    ],
+                    "properties": {
+                        "day": {
+                            "type": "number"
+                        },
+                        "month": {
+                            "type": "number"
+                        },
+                        "year": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "return_date": {
+                    "required": [
+                        "day",
+                        "month",
+                        "year"
+                    ],
+                    "properties": {
+                        "day": {
+                            "type": "number"
+                        },
+                        "month": {
+                            "type": "number"
+                        },
+                        "year": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "airlines": {
+                    "type": "string"
+                },
+                "cabin_class": {
+                    "type": "string"
+                },
+                "passengers": {
+                    "required": [
+                        "adult_count",
+                        "child_count",
+                        "infant_count"
+                    ],
+                    "properties": {
+                        "adult_count": {
+                            "type": "number"
+                        },
+                        "child_count": {
+                            "type": "number"
+                        },
+                        "infant_count": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        },
+        "total_price": {
+            "type": "object",
+            "required": [
+                "business"
+            ],
+            "properties": {
+                "business": {
+                    "required": [
+                        "amount",
+                        "currency",
+                        "cabin_code",
+                        "fare_breakdown"
+                    ],
+                    "properties": {
+                        "amount": {
+                            "type": "number"
+                        },
+                        "currency": {
+                            "type": "string"
+                        },
+                        "cabin_code": {
+                            "required": [
+                                "departing_segments",
+                                "returning_segments"
+                            ],
+                            "properties": {
+                                "departing_segments": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "returning_segments": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "fare_breakdown": {
+                            "required": [
+                                "adult",
+                                "child",
+                                "infant",
+                                "total",
+                                "total_net_fare"
+                            ],
+                            "properties": {
+                                "adult": {
+                                    "required": [
+                                        "price",
+                                        "tax",
+                                        "quantity",
+                                        "tax_breakdown",
+                                        "net_fare"
+                                    ],
+                                    "properties": {
+                                        "price": {
+                                            "type": "number"
+                                        },
+                                        "tax": {
+                                            "type": "number"
+                                        },
+                                        "quantity": {
+                                            "type": "number"
+                                        },
+                                        "tax_breakdown": {
+                                            "required": [
+                                                "PassengerTypeQuantity",
+                                                "FareBasisCodes",
+                                                "PassengerFare",
+                                                "Endorsements",
+                                                "TPA_Extensions",
+                                                "FareInfos"
+                                            ],
+                                            "properties": {
+                                                "PassengerTypeQuantity": {
+                                                    "required": [
+                                                        "Code",
+                                                        "Quantity"
+                                                    ],
+                                                    "properties": {
+                                                        "Code": {
+                                                            "type": "string"
+                                                        },
+                                                        "Quantity": {
+                                                            "type": "number"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "FareBasisCodes": {
+                                                    "required": [
+                                                        "FareBasisCode"
+                                                    ],
+                                                    "properties": {
+                                                        "FareBasisCode": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "BookingCode": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "DepartureAirportCode": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "ArrivalAirportCode": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "FareComponentBeginAirport": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "FareComponentEndAirport": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "FareComponentDirectionality": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "FareComponentVendorCode": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "GovCarrier": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "content": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "PassengerFare": {
+                                                    "required": [
+                                                        "BaseFare",
+                                                        "FareConstruction",
+                                                        "EquivFare",
+                                                        "Taxes",
+                                                        "OBFees",
+                                                        "TotalFare",
+                                                        "TPA_Extensions"
+                                                    ],
+                                                    "properties": {
+                                                        "BaseFare": {
+                                                            "required": [
+                                                                "Amount",
+                                                                "CurrencyCode"
+                                                            ],
+                                                            "properties": {
+                                                                "Amount": {
+                                                                    "type": "number"
+                                                                },
+                                                                "CurrencyCode": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "FareConstruction": {
+                                                            "required": [
+                                                                "Amount",
+                                                                "CurrencyCode",
+                                                                "DecimalPlaces"
+                                                            ],
+                                                            "properties": {
+                                                                "Amount": {
+                                                                    "type": "number"
+                                                                },
+                                                                "CurrencyCode": {
+                                                                    "type": "string"
+                                                                },
+                                                                "DecimalPlaces": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "EquivFare": {
+                                                            "required": [
+                                                                "Amount",
+                                                                "CurrencyCode",
+                                                                "DecimalPlaces"
+                                                            ],
+                                                            "properties": {
+                                                                "Amount": {
+                                                                    "type": "number"
+                                                                },
+                                                                "CurrencyCode": {
+                                                                    "type": "string"
+                                                                },
+                                                                "DecimalPlaces": {
+                                                                    "type": "number"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "Taxes": {
+                                                            "required": [
+                                                                "Tax",
+                                                                "TaxSummary",
+                                                                "TotalTax"
+                                                            ],
+                                                            "properties": {
+                                                                "Tax": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "TaxCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "CountryCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "Amount": {
+                                                                                "type": "number"
+                                                                            },
+                                                                            "CurrencyCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "DecimalPlaces": {
+                                                                                "type": "number"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "TaxSummary": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "TaxCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "CountryCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "Amount": {
+                                                                                "type": "number"
+                                                                            },
+                                                                            "CurrencyCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "DecimalPlaces": {
+                                                                                "type": "number"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "TotalTax": {
+                                                                    "required": [
+                                                                        "Amount",
+                                                                        "CurrencyCode",
+                                                                        "DecimalPlaces"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Amount": {
+                                                                            "type": "number"
+                                                                        },
+                                                                        "CurrencyCode": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "DecimalPlaces": {
+                                                                            "type": "number"
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "OBFees": {
+                                                            "required": [
+                                                                "OBFee"
+                                                            ],
+                                                            "properties": {
+                                                                "OBFee": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "Amount": {
+                                                                                "type": "number"
+                                                                            },
+                                                                            "CurrencyCode": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "DecimalPlaces": {
+                                                                                "type": "number"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "TotalFare": {
+                                                            "required": [
+                                                                "Amount",
+                                                                "CurrencyCode"
+                                                            ],
+                                                            "properties": {
+                                                                "Amount": {
+                                                                    "type": "number"
+                                                                },
+                                                                "CurrencyCode": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "TPA_Extensions": {
+                                                            "required": [
+                                                                "Messages",
+                                                                "BaggageInformationList"
+                                                            ],
+                                                            "properties": {
+                                                                "Messages": {
+                                                                    "required": [
+                                                                        "Message"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "Message": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "AirlineCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "Type": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "FailCode": {
+                                                                                        "type": "number"
+                                                                                    },
+                                                                                    "Info": {
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                },
+                                                                "BaggageInformationList": {
+                                                                    "required": [
+                                                                        "BaggageInformation"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "BaggageInformation": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "ProvisionType": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "AirlineCode": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "Segment": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                                "Id": {
+                                                                                                    "type": "number"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "Allowance": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                                "Weight": {
+                                                                                                    "type": "number"
+                                                                                                },
+                                                                                                "Unit": {
+                                                                                                    "type": "string"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "type": "object"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "Endorsements": {
+                                                    "required": [
+                                                        "NonRefundableIndicator"
+                                                    ],
+                                                    "properties": {
+                                                        "NonRefundableIndicator": {
+                                                            "type": "boolean"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "TPA_Extensions": {
+                                                    "required": [
+                                                        "FareCalcLine"
+                                                    ],
+                                                    "properties": {
+                                                        "FareCalcLine": {
+                                                            "required": [
+                                                                "Info"
+                                                            ],
+                                                            "properties": {
+                                                                "Info": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "FareInfos": {
+                                                    "required": [
+                                                        "FareInfo"
+                                                    ],
+                                                    "properties": {
+                                                        "FareInfo": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "FareReference": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "TPA_Extensions": {
+                                                                        "required": [
+                                                                            "SeatsRemaining",
+                                                                            "Cabin",
+                                                                            "Meal"
+                                                                        ],
+                                                                        "properties": {
+                                                                            "SeatsRemaining": {
+                                                                                "required": [
+                                                                                    "Number",
+                                                                                    "BelowMin"
+                                                                                ],
+                                                                                "properties": {
+                                                                                    "Number": {
+                                                                                        "type": "number"
+                                                                                    },
+                                                                                    "BelowMin": {
+                                                                                        "type": "boolean"
+                                                                                    }
+                                                                                },
+                                                                                "type": "object"
+                                                                            },
+                                                                            "Cabin": {
+                                                                                "required": [
+                                                                                    "Cabin"
+                                                                                ],
+                                                                                "properties": {
+                                                                                    "Cabin": {
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                },
+                                                                                "type": "object"
+                                                                            },
+                                                                            "Meal": {
+                                                                                "required": [
+                                                                                    "Code"
+                                                                                ],
+                                                                                "properties": {
+                                                                                    "Code": {
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                },
+                                                                                "type": "object"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "net_fare": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "total": {
+                                    "type": "number"
+                                },
+                                "total_net_fare": {
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        },
+        "adult_price": {
+            "type": "number",
+            "example": 0
+        },
+        "child_price": {
+            "type": "number",
+            "example": 0
+        },
+        "infant_price": {
+            "type": "number",
+            "example": 0
+        },
+        "adult_tax": {
+            "type": "number",
+            "example": 0
+        },
+        "child_tax": {
+            "type": "number",
+            "example": 0
+        },
+        "infant_tax": {
+            "type": "number",
+            "example": 0
+        },
+        "total_fare": {
+            "type": "number",
+            "example": 37921
+        },
+        "passengers": {
+            "type": "array",
+            "items": {
+                "required": [
+                    "type",
+                    "title",
+                    "first_name",
+                    "last_name"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "country_code": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "passport_number": {
+                        "type": "string"
+                    },
+                    "passport_country_of_issue": {
+                        "type": "string"
+                    },
+                    "passport_nationality": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "passport_expiry_date": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "special_message": {
+            "type": "object",
+            "required": [
+                "option",
+                "text"
+            ],
+            "properties": {
+                "option": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

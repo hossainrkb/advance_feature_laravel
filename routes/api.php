@@ -120,6 +120,7 @@ Route::get('execute-payment', function (Request $request) {
     return $result;
 });
 
+Route::get("/prac_index", "GuzzleController@prac_index");
 Route::get("/getdata", "AdvanceController@getGuzzleRequest");
 Route::get("/regis1", "AdvanceController@show_data1")->name("show_data");
 Route::post("/api_add", "AdvanceController@api_add_reg");

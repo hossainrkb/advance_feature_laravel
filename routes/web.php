@@ -44,6 +44,7 @@ Route::get("create_flight", "reservationController@create_flight");
 
 
 Auth::routes();
+Route::get("/prac_index", "GuzzleController@prac_index");
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/show_redis_data', 'AdvanceController@show_redis_data');
@@ -54,3 +55,4 @@ Route::get("redis_in", function(){
 });
 
 Route::get('contactdata/postdata', 'reservationController@postdata')->name('contact.postdata');
+Route::post('flight_reservation', 'reservationController@flight_reservation')->name('flight_reservation');

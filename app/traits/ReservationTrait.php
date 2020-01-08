@@ -10,6 +10,8 @@ trait ReservationTrait
     {
         $black_list = env("BLACK_LIST_USERID_FOR_SEGMENT_COUNT");
         $black_list = explode(',', $black_list);
+		$black_list = implode(",",$black_list);
+		dd($black_list);
         $all_reservation = Reservation::where("is_confirmed", 1)->get();
         return $all_reservation;
         //return self::getFlightSegmentCount($all_reservation, $black_list);

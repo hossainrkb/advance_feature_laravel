@@ -11,25 +11,23 @@
         "child_tax",
         "infant_tax",
         "total_fare",
-        "acc_card",
         "passengers",
         "special_message"
     ],
     "properties": {
         "booking_key": {
-            "type": "string",
-            "example": "ARFL1-ARFL1-J8VCHJ-J8VCHJ-ARFL1"
+            "type": "string"
         },
         "data": {
-           
             "required": [
-               
                 "passport_required",
                 "departing_flight_segments",
                 "price_itinerary",
-                "baggage_allowance"
+                "baggage_allowance",
+                "departing_flight_duration",
+                "returning_flight_segments",
+                "returning_flight_duration"
             ],
-            "type":"object",
             "properties": {
                 "passport_required": {
                     "type": "boolean"
@@ -158,12 +156,6 @@
                             },
                             "flight_duration": {
                                 "type": "number"
-                            },
-                            "stop_airports": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object"
-                                }
                             },
                             "cabin": {
                                 "type": "string"
@@ -467,13 +459,156 @@
                         }
                     },
                     "type": "object"
+                },
+                "departing_flight_duration": {
+                    "type": "number"
+                },
+                "returning_flight_segments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "departure_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_airport": {
+                                "required": [
+                                    "code"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "airline": {
+                                "required": [
+                                    "airline_name",
+                                    "code",
+                                    "flight_number"
+                                ],
+                                "properties": {
+                                    "airline_name": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "flight_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_date": {
+                                "required": [
+                                    "day",
+                                    "month",
+                                    "year"
+                                ],
+                                "properties": {
+                                    "day": {
+                                        "type": "number"
+                                    },
+                                    "month": {
+                                        "type": "number"
+                                    },
+                                    "year": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "departure_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "arrival_time": {
+                                "required": [
+                                    "hour",
+                                    "minute",
+                                    "format"
+                                ],
+                                "properties": {
+                                    "hour": {
+                                        "type": "number"
+                                    },
+                                    "minute": {
+                                        "type": "number"
+                                    },
+                                    "format": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "flight_duration": {
+                                "type": "number"
+                            },
+                            "stop_airports": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "cabin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "returning_flight_duration": {
+                    "type": "number"
                 }
-            }
+            },
+            "type": "object"
         },
-        "query":{
-            "type":"object",
+        "query": {
+            "type": "object",
             "required": [
-               
                 "origin",
                 "destination",
                 "departure_date",
@@ -483,6 +618,9 @@
                 "passengers"
             ],
             "properties": {
+                "trip_type": {
+                    "type": "string"
+                },
                 "origin": {
                     "type": "string"
                 },
@@ -555,9 +693,8 @@
             }
         },
         "total_price": {
-            "type":"object",
+            "type": "object",
             "required": [
-                "business",
                 "departing",
                 "returning",
                 "departing_itinerary",
@@ -750,37 +887,81 @@
             }
         },
         "adult_price": {
-            "type": "number",
-            "example": 0
+            "type": "number"
         },
         "child_price": {
-            "type": "number",
-            "example": 0
+            "type": "number"
         },
         "infant_price": {
-            "type": "number",
-            "example": 0
+            "type": "number"
         },
         "adult_tax": {
-            "type": "number",
-            "example": 0
+            "type": "number"
         },
         "child_tax": {
-            "type": "number",
-            "example": 0
+            "type": "number"
         },
         "infant_tax": {
-            "type": "number",
-            "example": 0
+            "type": "number"
         },
         "total_fare": {
-            "type": "number",
-            "example": 84097
+            "type": "number"
         },
-        "flight_count": {
-            "type": "number",
-            "example": 5
+        "passengers": {
+            "type": "array",
+            "items": {
+                "required": [
+                    "type",
+                    "title",
+                    "first_name",
+                    "last_name"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "first_name": {
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "country_code": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "special_message": {
+            "type": "object",
+            "required": [
+                "option",
+                "text"
+            ],
+            "properties": {
+                "option": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            }
         }
-      
     }
 }
