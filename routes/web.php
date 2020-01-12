@@ -56,3 +56,7 @@ Route::get("redis_in", function(){
 
 Route::get('contactdata/postdata', 'reservationController@postdata')->name('contact.postdata');
 Route::post('flight_reservation', 'reservationController@flight_reservation')->name('flight_reservation');
+
+//service controller
+Route::get('service_controller', 'ServiceController@store')->name('sc');
+Route::get('facade', 'ServiceController@facade');
