@@ -22,7 +22,10 @@ class SendEmailJob implements ShouldQueue
      */
     public function __construct($email)
     {
-        $this->get_data = $email;
+      
+       $this->get_data = $email;
+       
+ //  dd($this->get_data);
     }
 
     /**
@@ -30,9 +33,11 @@ class SendEmailJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle($f)
+    public function handle()
     {
-       // dump($this->get_data);
-        Mail::to("rakib.151045@gmail.com")->send(new SendEmailMailable());
+        // return [
+        //     "data"=>$this->get_data 
+        // ];
+       Mail::to($this->get_data)->send(new SendEmailMailable());
     }
 }

@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,3 +50,11 @@ Route::post('flight_reservation', 'reservationController@flight_reservation')->n
 //service controller
 Route::get('service_controller', 'ServiceController@store')->name('sc');
 Route::get('facade', 'ServiceController@facade');
+Route::get('OauthPassport', 'OauthPassportController@check')->middleware('client');
+Route::get('adminlogin', 'HolaadminController@login_page');
+Route::post('adminlogin', 'HolaadminController@login')->name("admin.login.submit");
+
+Route::get('bros', 'HolaadminController@index')->name("hola_bros")->middleware("hola_middleware");
+Route::get('/emni', function () {
+    return "emni";
+})->middleware("hola_middleware");

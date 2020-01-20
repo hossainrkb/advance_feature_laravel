@@ -42,8 +42,19 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
+            'hash' => false,
+        ],
+        //FOR ADMIN
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
             'hash' => false,
         ],
     ],
@@ -70,6 +81,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        //FOR ADMIN
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Holaadmin::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -95,6 +111,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
         ],

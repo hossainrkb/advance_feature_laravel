@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 //use Mail;
+use session;
 use App\Advancer;
 use Carbon\Carbon;
 use App\Department;
@@ -39,7 +40,7 @@ class AdvanceController extends Controller
     }
 
     public function ad_regis(FormValidation $re){
-
+        
         $advancer = new Advancer();
         $advancer->name = $re->a_name;
         $advancer->phone = $re->a_phone;
@@ -49,12 +50,14 @@ class AdvanceController extends Controller
        //    'q'     =>  $re->a_phone,
 
      //  );
-       event(new NewHolahasRegisteredEvant($re->a_phone, $re->a_name));
+    // $re->session()->put("datakey",$re->input());
+     //  event(new NewHolahasRegisteredEvant($re->a_phone, $re->a_name));
        
-        // dispatch (new SendEmailJob);
+      //   dispatch (new SendEmailJob($advancer->phone));
+         dispatch (new SendEmailJob($advancer->phones));
        
-        //SendEmailJob::dispatch()
-         //   ->delay(Carbon::now()->addSeconds(5));
+      //  SendEmailJob::dispatch($advancer->phone)
+        //    ->delay(Carbon::now()->addSeconds(5));
       
        // Mail::send('mail_send', $hola, function ($message) use ($hola) {
             //$this->hola=$hola;
@@ -66,8 +69,11 @@ class AdvanceController extends Controller
 //return $re->all();
     }
 
-    public function show_data(){
-       
+    public function show_data(Request $re){
+      if($re->session()->exists('datakey')){
+            dump(session()->get("datakey"));
+      }
+      //  session()->forget('datakey');
        // $advancer = Advancers::all_data('id');
         $advancer = Advancer::with("getdept")->get();
        // dd($advancer);
