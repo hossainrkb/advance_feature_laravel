@@ -57,4 +57,4 @@ Route::post('adminlogin', 'HolaadminController@login')->name("admin.login.submit
 Route::get('bros', 'HolaadminController@index')->name("hola_bros")->middleware("hola_middleware");
 Route::get('/emni', function () {
     return "emni";
-})->middleware("hola_middleware");
+})->middleware("role:everything");

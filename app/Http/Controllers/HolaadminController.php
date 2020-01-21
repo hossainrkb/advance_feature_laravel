@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class HolaadminController extends Controller
 {
     public function index(){
-        dd("hola bros");
+      //  dump("hola bros");
+       // Role::create(['guard_name' => 'admin','name' => 'something']);
+       //Auth::guard("admin")->user()->assignRole("something");
+       return json_decode(Auth::guard("admin")->user()->roles,true);
     }
     public function login_page(){
         return view("hola_admin.login");

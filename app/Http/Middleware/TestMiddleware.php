@@ -22,7 +22,8 @@ class TestMiddleware
        // dd($request->user("admin"));
        // dd();
        if(Auth :: guard ('admin')->check()){
-           dd(Auth::guard("admin")->user()->isAdmin());
+          // dd(Auth::guard("admin")->user()->isAdmin());
+          return $next($request);
        }
        else{
            dd("false badda");
