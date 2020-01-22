@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Holaadmin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Spatie\Permission\Models\Permission;
+
 class HolaadminController extends Controller
 {
     public function index(){
@@ -15,7 +18,17 @@ class HolaadminController extends Controller
        return json_decode(Auth::guard("admin")->user()->roles,true);
     }
     public function login_page(){
-        return view("hola_admin.login");
+       if(Cache::has("holaadmin_credentials")){
+       // dump("have");
+       $cached = Cache::get("holaadmin_credentials");
+       return redirect()->route("emni");
+       }
+       else{
+            return view("hola_admin.login");
+       }
+    }
+    public function regis_page(){
+        return view("hola_admin.regis");
     }
 
     //login
@@ -36,5 +49,16 @@ class HolaadminController extends Controller
                 "message"=>"failed"
             ]);
         }
+    }
+    public function regis (Request $re){
+      //  dd($re->input());
+        $holaadmin = new Holaadmin();
+        $holaadmin->hola_admin_name = $re->name;
+        $holaadmin->hola_admin_email = $re->email;
+        $holaadmin->hola_admin_roles = 0;
+        $holaadmin->save();
+        Auth::guard('admin')->attempt(['hola_admin_email' => $re->email]);
+        Cache::put('holaadmin_credentials', $re->input(), now()->addMinutes(10));
+        return "cached and stored in database";
     }
 }

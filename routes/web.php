@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,10 +53,15 @@ Route::post('flight_reservation', 'reservationController@flight_reservation')->n
 Route::get('service_controller', 'ServiceController@store')->name('sc');
 Route::get('facade', 'ServiceController@facade');
 Route::get('OauthPassport', 'OauthPassportController@check')->middleware('client');
+
+Route::get('adminregis', 'HolaadminController@regis_page');
 Route::get('adminlogin', 'HolaadminController@login_page');
 Route::post('adminlogin', 'HolaadminController@login')->name("admin.login.submit");
+Route::post('adminregis', 'HolaadminController@regis')->name("admin.regis.submit");
 
 Route::get('bros', 'HolaadminController@index')->name("hola_bros")->middleware("hola_middleware");
 Route::get('/emni', function () {
-    return "emni";
-})->middleware("role:everything");
+
+  //return Cache::get("holaadmin_credentials");
+    return "emni, you are admin";
+}) ->middleware("role:everything")->name("emni");

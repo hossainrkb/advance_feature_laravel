@@ -8,6 +8,7 @@ use Spatie\Permission\Traits\HasRoles;
 class Holaadmin extends Authenticatable
 {
       use HasRoles;
+    public $timestamps = false;
     public function isRole(){
        //return $this->hasOne('App\Holaadminrole', 'id','hola_admin_roles');
           return $this->belongsTo('App\Holaadminrole','hola_admin_roles','id');
