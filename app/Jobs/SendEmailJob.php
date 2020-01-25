@@ -38,6 +38,8 @@ class SendEmailJob implements ShouldQueue
         // return [
         //     "data"=>$this->get_data 
         // ];
+        //dd("get in");
+        //Queue::push(new \App\Jobs\SendEmailJob("rakib.151045@gmail.com"))
        Mail::to($this->get_data)->send(new SendEmailMailable());
     }
 }

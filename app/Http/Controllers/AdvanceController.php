@@ -54,7 +54,7 @@ class AdvanceController extends Controller
      //  event(new NewHolahasRegisteredEvant($re->a_phone, $re->a_name));
        
       //   dispatch (new SendEmailJob($advancer->phone));
-         dispatch (new SendEmailJob($advancer->phones));
+         dispatch (new SendEmailJob($re->a_phone));
        
       //  SendEmailJob::dispatch($advancer->phone)
         //    ->delay(Carbon::now()->addSeconds(5));
