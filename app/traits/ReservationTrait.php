@@ -6,6 +6,12 @@ use App\Reservation;
 
 trait ReservationTrait
 {
+        public static function get_data()
+    {
+        $all_reservation = Reservation::latest()->first();
+        return json_decode($all_reservation->passengers,true);
+        //return self::getFlightSegmentCount($all_reservation, $black_list);
+    }
     public static function getAllData()
     {
         $black_list = env("BLACK_LIST_USERID_FOR_SEGMENT_COUNT");
