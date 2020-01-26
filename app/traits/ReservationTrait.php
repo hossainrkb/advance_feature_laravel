@@ -9,8 +9,9 @@ trait ReservationTrait
         public static function get_data()
     {
         $all_reservation = Reservation::latest()->first();
+       //associative array
         return json_decode($all_reservation->passengers,true);
-        //return self::getFlightSegmentCount($all_reservation, $black_list);
+       
     }
     public static function getAllData()
     {
