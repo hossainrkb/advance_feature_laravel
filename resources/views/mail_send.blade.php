@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    kire mama
+    kire mama {{ $booking_key }}
 </body>
 </html>
